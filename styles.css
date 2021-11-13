@@ -1,0 +1,55 @@
+:root {
+    --accent-color: greenyellow;
+    --accent-background-color: rgb(38, 150, 184);
+}
+
+nav {
+    background-color: dimgrey;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 2em;
+}
+
+nav a {
+    padding-right: 1em;
+    text-decoration: solid;
+    color: beige;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.central-text {
+    color: var(--accent-color); 
+    background-color: var(--accent-background-color);
+    width: 35%;
+}
+
+.central-decoration-left {
+    background-image: repeating-linear-gradient(45deg, #3f87a6, #ebf8e1 15%, #f69d3c 20%);
+    width: 33%;
+}
+.central-decoration-right {
+    background-image: repeating-linear-gradient(-45deg, #3f87a6, #ebf8e1 15%, #f69d3c 20%);
+    width: 33%;
+}
+
+.get-started-btn {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 2em;
+    font-size: 2em;
+
+    color: var(--accent-background-color);
+    background-color: var(--accent-color);
+    border: none;
+    text-decoration: underline;
+    width: 50%;
+}
+
+footer, footer table {
+    color: aliceblue;
+    background-color: rgb(107, 102, 102);
+}
