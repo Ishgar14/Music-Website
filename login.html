@@ -15,6 +15,10 @@
       --accent-background-color: rgb(38, 150, 184);
     }
 
+    input[type="text"], input[type="password"] {
+      width: 100%;
+    }
+
     .login-card {
       margin-left: 25%;
       margin-right: 25%;
@@ -24,7 +28,7 @@
       align-items: center;
 
       font-size: 1.2em;
-      height: 3.5in;
+      transform: translateY(50%);
     }
 
     .login-btn {
@@ -43,10 +47,11 @@
 
 <body>
   <span class="login-card">
-    <span style="background-color: var(--accent-background-color); width: 100%; display: flex; justify-content: center;">
+    <span style="background-color: var(--accent-background-color); width: 100%; display: flex; justify-content: center; align-items: center;">
       <span>
+        <br><br>
         <label>Email</label> <br>
-        <input type="text" placeholder="rushikesh@gmail.com"> <br>
+        <input type="text" placeholder="rushikesh@gmail.com"> <br><br>
 
         <!-- <center>OR <br></center>
 
@@ -56,9 +61,12 @@
         <hr> -->
 
         <label>Password</label> <br>
-        <input type="password" placeholder="123456"> <br>
-        <a style="text-decoration: underline; font-size: medium;">Forgot Password?</a> <br> <br>
-        <input type="checkbox"> Remember me?
+        <input type="password" placeholder="123456"> <br><br>
+        <a style="text-decoration: underline; font-size: medium;">Forgot Password?</a> <br>
+        <span style="font-size: medium;">Don't have an account?</span>
+        <a href="./register.html" style="font-size: medium;">Sign up!</a> <br>
+
+        <input type="checkbox"> Remember me? <br><br>
         <button class="login-btn">Login</button>
       </span> <br> <br>
     </span>
