@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title>Sign Up for Spotify</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+            * {
+            font-family: Ubuntu;
+            }
+
+            body {
+                background-image: repeating-linear-gradient(-45deg, 
+                    rgb(78, 245, 209) 10%,
+                    rgba(240, 74, 185, 0.521) 25%
+                );
+            }
+
+            .center {
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .center p {
+                text-align: left;
+                font-size: larger;
+            }
+
+            .error {
+                text-align: left;
+                font-size: medium;
+                color: tomato;
+            }
+
+            input {
+                outline: 5px;
+                border: 3px solid black;
+                border-radius: .3em;
+                font-size: medium;
+            }
+
+            .submit-btn {
+                border-radius: 1in;
+                font-size: 2em;
+                color: rgb(245, 109, 109);
+                background-color: rgb(232, 245, 55);
+                width: 20%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <center>
+            <p style="font-size: .6in;">
+                Sign up <br>
+                to listen to free music!
+            </p>
+
+            <div >
+                <div class="center">
+                    <p>Whats your email?</p>
+                    <span><input type="search" id="email" placeholder="Enter your email" onkeydown="validate_email()" autocomplete="off"></span>
+                    <div class="error" name="error" id="email_error"></div>
+                </div> <br><br>
+
+                <div class="center">
+                    <p>Confirm your email</p>
+                    <span><input type="search" id="confirm_email" autocomplete="off" placeholder="Enter your email again" onkeydown="validate_confirm_email()"></span>
+                    <div class="error" name="error" id="confirm_email_error"></div>
+                </div> <br><br>
+
+                <div class="center">
+                    <p>Type your password</p>
+                    <span><input type="password" id="password" placeholder="qwerty" onkeydown="validate_password()"></span>
+                    <div class="error" name="error" id="pass_error"></div>
+                </div> <br><br>
+
+                <div class="center">
+                    <p>What do you want to be called?</p>
+                    <span><input type="text" id="username" placeholder="SpookyDoobydooo" onkeydown="validate_username()"></span>
+                    <div class="error" name="error" id="username_error"></div>
+                </div> <br><br>
+
+                <div class="center">
+                    <p>What is your gender?</p>
+                    <span class="center">
+                        <input type="radio" name="gender" id="gender"> <label for="gender">Male </label>
+                        <input type="radio" name="gender" id="gender"> <label for="gender">Female </label>
+                        <input type="radio" name="gender" id="gender"> <label for="gender">Non Binary </label>
+                    </span>
+                    <div class="error" name="error" id="gender_error"></div>
+                </div> <br><br>
+
+                <div class="center">
+                    <p>Enter your date of birth</p>
+                    <input type="date" id="DOB">
+                </div> <br><br>
+                
+                <button class="submit-btn" onclick="validate()">Sign up!</button>
+            </div>
+
+        </center>
+
+        <script>
+            function validate() {
+                const errors = document.getElementsByName('error');
+                console.log(errors);
+
+                for(let error of errors){
+                    if(error.value) console.log("There are Errors!");
+                }
+
+            }
+
+            function validate_email() {
+                const email = document.getElementById('email');
+                const error = document.getElementById('email_error');
+
+                if (!email.value.match(/[\w\d]+@\w+(\.\w+)+/g))
+                    error.innerText = "Please enter a valid email!";
+                else error.innerText = "";
+            }
+
+            function validate_confirm_email() {
+                const email = document.getElementById('email');
+                const confirm_email = document.getElementById('confirm_email');
+                const error = document.getElementById('confirm_email_error');
+
+                if (email.value != confirm_email.value)
+                    error.innerText = "The emails are not same!";
+                else error.innerText = "";
+            }
+
+            function validate_password() {
+                const password = document.getElementById('password');
+                const error = document.getElementById('pass_error');
+
+                if(!password.value.match(/[\w\d@\.,'"]{6,}/g))
+                    error.innerText = "Enter a stronger password!";
+                else
+                    error.innerText = "";
+            }
+
+            function validate_username() {
+                const password = document.getElementById('username');
+                const error = document.getElementById('username_error');
+
+                if(!password.value.match(/^\w[\w\d]+$/g))
+                    error.innerText = "Username should start with a letter and should not have special characters";
+                else
+                    error.innerText = "";
+            }
+
+            function validate_gender() {
+                const gender = document.getElementsByName('gender');
+                console.log(gender)
+            }
+        </script>
+    </body>
+</html>
