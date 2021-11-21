@@ -61,34 +61,34 @@
             <div >
                 <div class="center">
                     <p>Whats your email?</p>
-                    <span><input type="search" id="email" placeholder="Enter your email" onkeydown="validate_email()" autocomplete="off"></span>
+                    <span><input type="search" id="email" placeholder="Enter your email" autocomplete="off"></span>
                     <div class="error" name="error" id="email_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>Confirm your email</p>
-                    <span><input type="search" id="confirm_email" autocomplete="off" placeholder="Enter your email again" onkeydown="validate_confirm_email()"></span>
+                    <span><input type="search" id="confirm_email" autocomplete="off" placeholder="Enter your email again"></span>
                     <div class="error" name="error" id="confirm_email_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>Type your password</p>
-                    <span><input type="password" id="password" placeholder="qwerty" onkeydown="validate_password()"></span>
+                    <span><input type="password" id="password" placeholder="qwerty"></span>
                     <div class="error" name="error" id="pass_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>What do you want to be called?</p>
-                    <span><input type="text" id="username" placeholder="SpookyDoobydooo" onkeydown="validate_username()"></span>
+                    <span><input type="text" id="username" placeholder="SpookyDoobydooo"></span>
                     <div class="error" name="error" id="username_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>What is your gender?</p>
                     <span class="center">
-                        <input type="radio" name="gender" id="gender"> <label for="gender">Male </label>
-                        <input type="radio" name="gender" id="gender"> <label for="gender">Female </label>
-                        <input type="radio" name="gender" id="gender"> <label for="gender">Non Binary </label>
+                        <input type="radio" name="gender" value="male"> <label for="gender">Male </label>
+                        <input type="radio" name="gender" value="female"> <label for="gender">Female </label>
+                        <input type="radio" name="gender" value="nonbinary"> <label for="gender">Non Binary </label>
                     </span>
                     <div class="error" name="error" id="gender_error"></div>
                 </div> <br><br>
@@ -96,6 +96,7 @@
                 <div class="center">
                     <p>Enter your date of birth</p>
                     <input type="date" id="DOB">
+                    <div class="error" id="dob_error"></div>
                 </div> <br><br>
                 
                 <button class="submit-btn" onclick="validate()">Sign up!</button>
@@ -106,12 +107,20 @@
         <script>
             function validate() {
                 const errors = document.getElementsByName('error');
-                console.log(errors);
 
-                for(let error of errors){
-                    if(error.value) console.log("There are Errors!");
+                if( 
+                    validate_email()         ||
+                    validate_confirm_email() ||
+                    validate_password()      ||
+                    validate_username()      ||
+                    validate_gender()           ||
+                    validate_dob()
+                ){
+                    console.log("There are errors!");
                 }
-
+                else {
+                    window.location.href = "./music.html"
+                }
             }
 
             function validate_email() {
@@ -121,6 +130,7 @@
                 if (!email.value.match(/[\w\d]+@\w+(\.\w+)+/g))
                     error.innerText = "Please enter a valid email!";
                 else error.innerText = "";
+                return error.innerText;
             }
 
             function validate_confirm_email() {
@@ -131,6 +141,7 @@
                 if (email.value != confirm_email.value)
                     error.innerText = "The emails are not same!";
                 else error.innerText = "";
+                return error.innerText;
             }
 
             function validate_password() {
@@ -141,21 +152,58 @@
                     error.innerText = "Enter a stronger password!";
                 else
                     error.innerText = "";
+                    return error.innerText;
             }
 
             function validate_username() {
                 const password = document.getElementById('username');
                 const error = document.getElementById('username_error');
 
-                if(!password.value.match(/^\w[\w\d]+$/g))
+                if(!password.value.match(/^[a-zA-Z]\w+$/g))
                     error.innerText = "Username should start with a letter and should not have special characters";
                 else
                     error.innerText = "";
+                    return error.innerText;
             }
 
             function validate_gender() {
                 const gender = document.getElementsByName('gender');
-                console.log(gender)
+                const error = document.getElementById('gender_error');
+                let valid = false;
+                for (g of gender){
+                    if(g.checked) {
+                        valid = true;
+                        break;
+                    }
+                }
+
+                if(valid) error.innerText = "";
+                else error.innerText = "Please select your gender";
+                return error.innerText;
+            }
+
+            function validate_dob() {
+                const dob = document.getElementById('DOB');
+                const error = document.getElementById('dob_error');
+
+                const age = (date) => 2021 - Number(date.split('-')[0]);
+
+                const valid_age = (date) => {
+                    const a = age(date);
+                    return !(a > 70 || a < 13);
+                }
+
+                if (!dob.value) {
+                    error.innerText = "Enter your date of birth";
+                }
+                else if (!valid_age(dob.value)) {
+                    if (age(dob.value) < 13)
+                        error.innerText = "Too young for music!";
+                    else if (age(dob.value) > 70)
+                        error.innerText = "Too old for music!";
+                }
+                else error.innerText = "";
+                return error.innerText;
             }
         </script>
     </body>
