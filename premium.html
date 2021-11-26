@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+        :root {
+            --accent-color: #33c4b6
+        }
+
+        nav {
+            background-color: var(--accent-color);
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        nav a {
+            padding-left: 1em;
+            font-size: larger;
+            color: rgb(251, 255, 20);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: rgb(255, 142, 66);
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin: -190px 0 0 -468px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            color: #9f9f9f;
+            font-size: 15px;
+        }
+
+        .package {
+            box-sizing: border-box;
+            width: 301px;
+            height: 380px;
+            border: 3px solid #e8e8e8;
+            border-radius: 7px;
+            /* display: inline-block; */
+            padding: 24px;
+            text-align: center;
+            float: left;
+            -webkit-transition: margin-top 0.5s linear;
+            transition: margin-top 0.5s linear;
+            position: relative;
+            margin-right: 11px;
+        }
+
+        .package:hover {
+            margin-top: -30px;
+            -webkit-transition: margin-top 0.3s linear;
+            transition: margin-top 0.3s linear;
+        }
+
+        .name {
+            color: #565656;
+            font-weight: 300;
+            font-size: 3rem;
+            margin-top: -5px;
+        }
+
+        .price {
+            margin-top: 7px;
+            font-weight: bold;
+        }
+
+        .price::after {
+            content: " / month per user";
+            font-weight: normal;
+        }
+
+        hr {
+            background-color: #8a8a8a;
+            border: none;
+            height: 1px;
+        }
+
+        .trial {
+            font-size: .9rem;
+            font-weight: 600;
+            padding: 2px 21px 2px 21px;
+            color: var(--accent-color);
+            border: 1px solid #8f8f8f;
+            display: inline-block;
+            border-radius: 15px;
+            background-color: white;
+            position: relative;
+            bottom: -20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 29px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        .checkIcon {
+            font-family: "FontAwesome";
+            content: "\f00c";
+        }
+
+        li::before {
+            font-family: "FontAwesome";
+            content: "\f00c";
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-right: 3px;
+        }
+
+        .selected {
+            border-color: var(--accent-color);
+        }
+
+        /* Triangle */
+
+        .selected::before {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 64px 64px 0 0;
+            border-color: #3bc6b8 transparent transparent transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+        }
+
+        .selected::after {
+            font-family: "FontAwesome";
+            content: "\f00c";
+            color: white;
+            position: absolute;
+            left: 9px;
+            top: 6px;
+            text-shadow: 0 0 2px #37c5b6;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body onload="load()">
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./login.html">Login</a>
+    </nav>
+    <div class="wrapper">
+        <center style="font-size: 1in; padding-bottom: 1in;">Pick your plan</center>
+        <div class="package">
+            <div class="name">Free</div>
+            <div class="price">₹0</div>
+            <hr>
+            <ul>
+                <li>Listen <strong>Unlimited</strong> playlists</li>
+            </ul>
+        </div>
+        <div class="package selected">
+            <div class="name">Standard</div>
+            <div class="price">₹250</div>
+            <div class="trial">Free 30 day trial</div>
+            <hr>
+            <ul>
+                <li><strong>Create</strong> your own playlists</li>
+                <li>Listen <strong>Unlimited</strong> playlists</li>
+                <li>Listen to <strong>50</strong> songs a day</li>
+            </ul>
+        </div>
+        <div class="package">
+            <div class="name">Premium</div>
+            <div class="price">₹500</div>
+            <div class="trial">Free 30 day trial</div>
+            <hr>
+            <ul>
+                <li><strong>Create</strong> your own playlists</li>
+                <li>Listen <strong>Unlimited</strong> playlists</li>
+                <li>Listen to <strong>150</strong> songs a day</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let selected = document.getElementsByClassName("package selected")[0];
+
+        function load(){
+            for (let package of document.getElementsByClassName("package")){
+                package.addEventListener("click", (e) => {
+                    selected.className = selected.className.slice(0, selected.className.indexOf(' selected'));
+                    selected = e.target;
+                    selected.className += ' selected';
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>
