@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+* {
+    font-family: Ubuntu;
+}
+
+body {
+  background-color: rgb(211, 245, 189);
+}
+
+.top {
+    width: 100%;
+    background-color: bisque;
+    font-size: 2em;
+    margin-top: 2em;
+    /* padding-left: 50%;
+    padding-right: 40%;
+    padding-top: 5em;
+    padding-bottom: 2em; */
+}
+
+nav {
+    background-color: yellow;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -8px;
+}
+
+nav a {
+    font-size: 1.3em;
+    padding-left: 2em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: coral;
+}
+
+.container {
+  min-height: 50vh;
+  /* background-color: black; */
+  background-image: linear-gradient(
+      to top right,
+        rgb(248, 59, 255),
+        rgb(92, 255, 255) 20%,
+        rgb(45, 248, 170),
+        rgb(255, 255, 83)
+  );
+  color: black;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5em;
+  text-align: justify;
+  padding: 5% 20% 5% 20%;
+}
+
