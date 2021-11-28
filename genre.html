@@ -1,66 +1,70 @@
 <html>
-    <link rel="stylesheet" href="genre.css">
-    <header>
-        <nav>
-            <ul>
+<link rel="stylesheet" href="genre.css">
+<header>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./login.html">Login</a>
+        <a href="./about_us/about_us.html">About us</a>
+        <a href="./index.html">Home</a>
+        <!-- <ul>
                 <li><a href="featured.html">Featured</a></li>
                 <li><a href="Genres & Moods.html"> Genres & Moods</a></li>
                 <li><a href="New Releases.html">New Releases</a></li>
                 <li><a href="Discover.html">Discover</a></li>
                 <script src="https://use.fontawesome.com/f449517365.js"></script>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1> Genres & Moods
-    </main>
-    <div class="music christian">
-        <i class="fa fa-book fa-4x" aria-hidden="true"></i>
-        <p class="c">Christian</p>
-    </div>
+            </ul> -->
+    </nav>
+</header>
+<main>
+    <h1> Genres
+</main>
+<div class="music christian">
+    <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+    <p class="c">Covers</p>
+</div>
 
-    </div>
-    <div class="music pop">
-        <i class="fa fa-fire fa-4x" aria-hidden="true"></i>
-        <p class="c">Pop</p>
-    </div>
+</div>
+<div class="music pop">
+    <i class="fa fa-fire fa-4x" aria-hidden="true"></i>
+    <p class="c">EDM</p>
+</div>
 
-    <div class="music mood">
-        <i class="fa fa-meh-o fa-4x" aria-hidden="true"></i>
-        <p class="c">Mood</p>
-    </div>
+<div class="music mood">
+    <i class="fa fa-meh-o fa-4x" aria-hidden="true"></i>
+    <p class="c">General</p>
+</div>
 
-    <div class="music hiphop">
-        <i class="fa fa-link fa-4x" aria-hidden="true"></i>
-        <p class="c">Hip Hop </p>
-    </div>
+<div class="music hiphop">
+    <i class="fa fa-link fa-4x" aria-hidden="true"></i>
+    <p class="c">Instrumental</p>
+</div>
 
-    <div class="music chill">
-        <p class="c">Chill </p>
-        <i class="fa fa-snowflake-o fa-4x" aria-hidden="true"></i>
-    </div>
-    <div class="music latino">
+<div class="music chill">
+    <p class="c">Lofi</p>
+    <i class="fa fa-snowflake-o fa-4x" aria-hidden="true"></i>
+</div>
+<div class="music latino">
 
-        <i class="fa fa-volume-up fa-4x" aria-hidden="true"></i>
-        <p class="c">Latino </p>
-    </div>
+    <i class="fa fa-volume-up fa-4x" aria-hidden="true"></i>
+    <p class="c">Pop</p>
+</div>
 
-    <div class="music electronic">
-        <i class="fa fa-diamond fa-4x" aria-hidden="true"></i>
-        <p class="c"> Electronic x Dance</p>
-    </div>
+<div class="music electronic">
+    <i class="fa fa-diamond fa-4x" aria-hidden="true"></i>
+    <p class="c">Ringtones</p>
+</div>
 
-    <div class="music country">
-        <i class="fa fa-star fa-4x" aria-hidden="true"></i>
-        <p class="c"> Country</p>
-    </div>
+<div class="music country">
+    <i class="fa fa-star fa-4x" aria-hidden="true"></i>
+    <p class="c">Romantic</p>
+</div>
 
-    <div class="music rock">
-        <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
-        <p class="c"> Rock</p>
-    </div>
+<div class="music rock">
+    <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
+    <p class="c">Soul</p>
+</div>
 
-    <div class="music focus">
+<!-- <div class="music focus">
         <i class="fa fa-desktop fa-4x" aria-hidden="true"></i>
         <p class="c">Focus </p>
     </div>
@@ -73,5 +77,18 @@
     <div class="music party">
         <i class="fa fa-headphones fa-4x" aria-hidden="true"></i>
         <p class="c"> Party</p>
-    </div>
+    </div> -->
+
+<script>
+    (function load() {
+        console.log('loaded');
+        for (let divs of document.getElementsByTagName('div')){
+            divs.addEventListener('click', (e) => {
+                // console.log(e.target.children[1].innerHTML);
+                window.location.href = `./music/${e.target.children[1].innerHTML}/music.html`;
+            });
+        }
+    })()
+</script>
+
 </html>
