@@ -47,7 +47,7 @@ nav ul li {
   width: 70%;
   border-radius: 12px;
   padding: 34px;
-  background-image: url("inglon.png");
+  /*background-image: url("inglon.png");*/
 }
 
 .bottom {
@@ -74,8 +74,13 @@ nav ul li {
   cursor: pointer;
 }
 
+.songList{
+  width: 100%;
+}
+
 .songItemContainer {
   margin-top: 10px;
+  width: 100%;
 }
 
 .songItem {
@@ -88,7 +93,8 @@ nav ul li {
   margin: 12px 0;
   justify-content: space-between;
   align-items: center;
-  border-radius: px;
+  border-radius: 1em;
+  width: 100%;
 }
 
 .songItem img {

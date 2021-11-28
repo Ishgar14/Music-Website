@@ -62,12 +62,12 @@ masterPlay.addEventListener("click", () => {
     audioElement.play();
     masterPlay.classList.remove("fa-play-circle");
     masterPlay.classList.add("fa-pause-circle");
-    gif.style.opacity = 1;
+    
   } else {
     audioElement.pause();
     masterPlay.classList.remove("fa-pause-circle");
     masterPlay.classList.add("fa-play-circle");
-    gif.style.opacity = 0;
+    
   }
 });
 // Listen to Events
@@ -98,11 +98,11 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach(
       songIndex = parseInt(event.target.id);
       event.target.classList.remove("fa-play-circle");
       event.target.classList.add("fa-pause-circle");
-      audioElement.src = `songs/${songIndex + 1}.mp3`;
+      audioElement.src = songs[songIndex+1].filePath;
       masterSongName.innerText = songs[songIndex].songName;
       audioElement.currentTime = 0;
       audioElement.play();
-      gif.style.opacity = 1;
+      
       masterPlay.classList.remove("fa-play-circle");
       masterPlay.classList.add("fa-pause-circle");
     });
@@ -115,7 +115,7 @@ document.getElementById("next").addEventListener("click", () => {
   } else {
     songIndex += 1;
   }
-  audioElement.src = `songs/${songIndex + 1}.mp3`;
+  audioElement.src = songs[songIndex+1].filePath;
   masterSongName.innerText = songs[songIndex].songName;
   audioElement.currentTime = 0;
   audioElement.play();
@@ -129,7 +129,7 @@ document.getElementById("previous").addEventListener("click", () => {
   } else {
     songIndex -= 1;
   }
-  audioElement.src = `songs/${songIndex + 1}.mp3`;
+  audioElement.src = songs[songIndex+1].filePath;
   masterSongName.innerText = songs[songIndex].songName;
   audioElement.currentTime = 0;
   audioElement.play();
