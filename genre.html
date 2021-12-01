@@ -1,93 +1,81 @@
 <html>
-<link rel="stylesheet" href="genre.css">
-<header>
-    <nav>
-        <a href="./index.html">Home</a>
-        <a href="./login.html">Login</a>
-        <a href="./about_us/about_us.html">About us</a>
-        <!-- <ul>
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="Genres & Moods.html"> Genres & Moods</a></li>
-                <li><a href="New Releases.html">New Releases</a></li>
-                <li><a href="Discover.html">Discover</a></li>
-                <script src="https://use.fontawesome.com/f449517365.js"></script>
-            </ul> -->
-    </nav>
-</header>
-<main>
-    <h1> Genres </h1>
-</main>
-<div class="music covers">
-    <i class="fa fa-book fa-4x" aria-hidden="true"></i>
-    <p class="c">Covers</p>
-</div>
+<link rel="stylesheet" href="./genre.css">
+<nav>
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Login</a>
+    <a href="./about_us/about_us.html">About us</a>
+    <!-- <ul>
+            <li><a href="featured.html">Featured</a></li>
+            <li><a href="Genres & Moods.html"> Genres & Moods</a></li>
+            <li><a href="New Releases.html">New Releases</a></li>
+            <li><a href="Discover.html">Discover</a></li>
+            <script src="https://use.fontawesome.com/f449517365.js"></script>
+        </ul> -->
+</nav>
 
-</div>
-<div class="music edm">
-    <i class="fa fa-fire fa-4x" aria-hidden="true"></i>
-    <p class="c">EDM</p>
-</div>
+<body>
 
-<div class="music general">
-    <i class="fa fa-meh-o fa-4x" aria-hidden="true"></i>
-    <p class="c">General</p>
-</div>
 
-<div class="music instrumental">
-    <i class="fa fa-link fa-4x" aria-hidden="true"></i>
-    <p class="c">Instrumental</p>
-</div>
-
-<div class="music lofi">
-    <i class="fa fa-snowflake-o fa-4x" aria-hidden="true"></i>
-    <p class="c">Lofi</p>
-</div> <br><br>
-<div class="music pop">
-
-    <i class="fa fa-volume-up fa-4x" aria-hidden="true"></i>
-    <p class="c">Pop</p>
-</div>
-
-<div class="music ringtone">
-    <i class="fa fa-diamond fa-4x" aria-hidden="true"></i>
-    <p class="c">Ringtones</p>
-</div>
-
-<div class="music romantic">
-    <i class="fa fa-star fa-4x" aria-hidden="true"></i>
-    <p class="c">Romantic</p>
-</div>
-
-<div class="music soul">
-    <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
-    <p class="c">Soul</p>
-</div>
-
-<!-- <div class="music focus">
-        <i class="fa fa-desktop fa-4x" aria-hidden="true"></i>
-        <p class="c">Focus </p>
+    <main>
+        <h1> Genres </h1>
+    </main>
+    <div class="music covers">
+        <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+        <p class="c">Covers</p>
     </div>
 
-    <div class="music randb">
-        <i class="fa fa-music fa-4x" aria-hidden="true"></i>
-        <p class="c"> RnB</p>
+    </div>
+    <div class="music edm">
+        <i class="fa fa-fire fa-4x" aria-hidden="true"></i>
+        <p class="c">EDM</p>
     </div>
 
-    <div class="music party">
-        <i class="fa fa-headphones fa-4x" aria-hidden="true"></i>
-        <p class="c"> Party</p>
-    </div> -->
+    <div class="music general">
+        <i class="fa fa-meh-o fa-4x" aria-hidden="true"></i>
+        <p class="c">General</p>
+    </div>
 
-<script>
-    (function load() {
-        console.log('loaded');
-        for (let divs of document.getElementsByTagName('div')) {
-            divs.addEventListener('click', (e) => {
-                // console.log(e.target.children[1].innerHTML);
-                window.location.href = `./music/${e.target.children[1].innerHTML}/music.html`;
-            });
-        }
-    })()
-</script>
+    <div class="music instrumental">
+        <i class="fa fa-link fa-4x" aria-hidden="true"></i>
+        <p class="c">Instrumental</p>
+    </div>
+
+    <div class="music lofi">
+        <i class="fa fa-snowflake-o fa-4x" aria-hidden="true"></i>
+        <p class="c">Lofi</p>
+    </div> <br><br>
+
+    <div class="music pop">
+        <i class="fa fa-volume-up fa-4x" aria-hidden="true"></i>
+        <p class="c">Pop</p>
+    </div>
+
+    <div class="music ringtone">
+        <i class="fa fa-diamond fa-4x" aria-hidden="true"></i>
+        <p class="c">Ringtones</p>
+    </div>
+
+    <div class="music romantic">
+        <i class="fa fa-star fa-4x" aria-hidden="true"></i>
+        <p class="c">Romantic</p>
+    </div>
+
+    <div class="music soul">
+        <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
+        <p class="c">Soul</p>
+    </div>
+
+    <script>
+        (function load() {
+            console.log('loaded');
+            for (let divs of document.getElementsByTagName('div')) {
+                divs.addEventListener('click', (e) => {
+                    // console.log(e.target.children[1].innerHTML);
+                    window.location.href = `./music/${e.target.children[1].innerHTML}/music.html`;
+                });
+            }
+        })()
+    </script>
+</body>
 
 </html>
