@@ -41,7 +41,7 @@
 <div class="music lofi">
     <p class="c">Lofi</p>
     <i class="fa fa-snowflake-o fa-4x" aria-hidden="true"></i>
-</div>
+</div> <br><br>
 <div class="music pop">
 
     <i class="fa fa-volume-up fa-4x" aria-hidden="true"></i>
@@ -81,7 +81,7 @@
 <script>
     (function load() {
         console.log('loaded');
-        for (let divs of document.getElementsByTagName('div')){
+        for (let divs of document.getElementsByTagName('div')) {
             divs.addEventListener('click', (e) => {
                 // console.log(e.target.children[1].innerHTML);
                 window.location.href = `./music/${e.target.children[1].innerHTML}/music.html`;
