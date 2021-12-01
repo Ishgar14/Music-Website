@@ -65,7 +65,7 @@
     left: 0;
   }
   
-  .christian {
+  .covers {
     background-image: url("https://images.pexels.com/photos/217041/pexels-photo-217041.jpeg?w=200&h=200&auto=compress&cs=tinysrgb");
     background-size: cover;
     background-position: center;
@@ -77,49 +77,49 @@
     width: 100%;
   }
   
-  .pop {
+  .edm {
     background-image: url("https://static.pexels.com/photos/134/light-creative-abstract-colorful.jpg");
     background-size: cover;
     background-position: center;
   }
   
-  .mood {
+  .general {
     background-image: url("https://static.pexels.com/photos/227700/pexels-photo-227700.jpeg");
     background-size: cover;
     background-position: center;
   }
   
-  .hiphop {
+  .instrumental {
     background-image: url("https://static.pexels.com/photos/111295/pexels-photo-111295.jpeg");
     background-size: cover;
     background-position: center;
   }
   
-  .chill {
+  .lofi {
     background-image: url("https://static.pexels.com/photos/91224/pexels-photo-91224.jpeg");
     background-size: cover;
     background-position: center;
   }
   
-  .latino {
+  .pop {
     background-image: url("https://static.pexels.com/photos/58737/pexels-photo-58737.jpeg");
     background-size: cover;
     background-position: center;
   }
   
-  .electronic {
+  .ringtone {
     background-image: url("https://static.pexels.com/photos/132836/pexels-photo-132836.jpeg");
     background-size: cover;
     background-position: center;
   }
   
-  .country {
+  .romantic {
     background-image: url("https://static.pexels.com/photos/467/nature-sky-clouds-field.jpg");
     background-size: cover;
     background-position: center;
   }
   
-  .rock {
+  .soul {
     background-image: url("https://static.pexels.com/photos/144428/pexels-photo-144428.jpeg");
     background-size: cover;
     background-position: center;
