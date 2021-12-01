@@ -1,5 +1,4 @@
-<?php
-    
+<?php    
     // Database connection configurations
     $host = 'localhost';
     $DB_user = 'root';
@@ -16,11 +15,6 @@
         $password = $_POST['password'];
         $username = $_POST['username'];
         $DOB = $_POST['DOB'];
-
-        // echo $email . '\n';
-        // echo $password . '\n';
-        // echo $username . '\n';
-        // echo $DOB . '\n';
     }
 
     $query = 'INSERT INTO users (firstname, lastname, email, password, username, DOB) values(null, null, ' . 
@@ -30,7 +24,6 @@
         '"'. $DOB . '"' .
         ')';
 
-    // echo $query;
     $result = mysqli_query($con, $query);
 
     if(!$result) {
@@ -38,5 +31,7 @@
     }
     else {
         echo "You have been registered on our website!";
+        sleep(4);
+        header('Location: http://localhost/WT-Project/genre.html');
     }
 ?>
