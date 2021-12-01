@@ -12,8 +12,8 @@ a {
 }
 
 a:hover {
-  border-bottom: 2.4px solid green;
   color: white;
+  text-decoration: underline greenyellow;
 }
 
 nav {
@@ -31,7 +31,6 @@ h1 {
 }
 
 i {
-  /* text:align; */
   text-align: center;
   margin: 0 auto;
   position: absolute;
@@ -62,7 +61,6 @@ main {
 
 .music::before {
   content: "";
-  background: rgba(0, 0, 0, 0.0);
   position: absolute;
   top: 0;
   right: 0;
@@ -126,24 +124,6 @@ p {
 
 .soul {
   background-image: url("./genre_logos/soul.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.focus {
-  background-image: url("https://static.pexels.com/photos/205317/pexels-photo-205317.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.randb {
-  background-image: url("https://static.pexels.com/photos/220211/pexels-photo-220211.jpeg");
-  background-size: cover;
-  background-position: center;
-}
-
-.party {
-  background-image: url("https://static.pexels.com/photos/248427/pexels-photo-248427.jpeg");
   background-size: cover;
   background-position: center;
 }
