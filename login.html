@@ -29,8 +29,8 @@
     }
 
     .login-card {
-      margin-left: 25%;
-      margin-right: 25%;
+      margin-left: 20%;
+      margin-right: 20%;
       
       display: flex;
       justify-content: center;
@@ -60,26 +60,52 @@
       <span>
         <br><br>
         <label>Email</label> <br>
-        <input type="text" placeholder="rushikesh@gmail.com"> <br><br>
-
+        <input type="text" placeholder="rushikesh@gmail.com" name="email" id="email">
+        <span id="email_error" style="color: rgb(255, 178, 149); font-size: medium;"></span>
+        <br><br>
+        
         <!-- <center>OR <br></center>
 
         <label>Username</label> <br>
         <input type="text" placeholder="Ishgar14"> <br>
-
+        
         <hr> -->
-
+        
         <label>Password</label> <br>
-        <input type="password" placeholder="123456"> <br><br>
+        <input type="password" placeholder="qwerty" name="password" id="password">
+        <span id="password_error" style="color: rgb(255, 178, 149); font-size: medium;"></span>
+        <br><br>
         <!-- <a style="text-decoration: underline; font-size: medium;">Forgot Password?</a> <br> -->
         <span style="font-size: medium;">Don't have an account?</span>
         <a href="./register.html" style="font-size: medium;">Sign up!</a> <br>
 
         <input type="checkbox"> Remember me? <br><br>
-        <button class="login-btn" onclick="window.location.href='./genre.html'">Login</button>
+        <button class="login-btn" onclick="redirect_to_genres()">Login</button>
       </span> <br> <br>
     </span>
   </span>
+
+  <script>
+    function redirect_to_genres() {
+      const email = document.getElementById('email');
+      const email_error = document.getElementById('email_error');
+      
+      const password = document.getElementById('password');
+      const password_error = document.getElementById('password_error');
+
+      if (!email.value.match(/[\w\d]+@\w+(\.\w+)+/g))
+        email_error.innerText = "Please enter a valid email!";
+      else email_error.innerText = "";
+
+      if(!password.value)
+        password_error.innerText = "Please type your password";
+      else 
+        password_error.innerText = "";
+
+      if(!(email_error.innerText || password_error.innerText))
+        window.location.href = './genre.html';
+    }
+  </script>
 </body>
 
 </html>
