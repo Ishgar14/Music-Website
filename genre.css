@@ -16,6 +16,11 @@ a:hover {
   color: white;
 }
 
+nav {
+  display: flex;
+  justify-content: start;
+}
+
 nav li {
   display: inline-block;
   margin-right: 35px;
@@ -50,14 +55,14 @@ main {
   border: 1px solid #333333;
   display: inline-block;
   margin-top: 50px;
-  margin-right: 20px;
+  margin-right: 40px;
   vertical-align: top;
   position: relative;
 }
 
 .music::before {
   content: "";
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.0);
   position: absolute;
   top: 0;
   right: 0;
