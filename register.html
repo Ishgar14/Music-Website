@@ -62,37 +62,37 @@
                 <form action="/WT-Project/register.php" method="post">
                 <div class="center">
                     <p>Whats your first name?</p>
-                    <span><input type="search" name="firstname" id="firstname" placeholder="Enter your first name" autocomplete="off"></span>
+                    <span><input type="search" name="firstname" id="firstname" placeholder="Enter your first name" autocomplete="off" onkeyup="validate_names()"></span>
                     <div class="error" name="error" id="firstname_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>Whats your last name?</p>
-                    <span><input type="search" name="lastname" id="lastname" placeholder="Enter your last name" autocomplete="off"></span>
+                    <span><input type="search" name="lastname" id="lastname" placeholder="Enter your last name" autocomplete="off" onkeyup="validate_names()"></span>
                     <div class="error" name="error" id="lastname_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>Whats your email?</p>
-                    <span><input type="search" name="email" id="email" placeholder="Enter your email" autocomplete="off"></span>
+                    <span><input type="search" name="email" id="email" placeholder="Enter your email" autocomplete="off" onkeyup="validate_email()"></span>
                     <div class="error" name="error" id="email_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>Confirm your email</p>
-                    <span><input type="search" id="confirm_email" autocomplete="off" placeholder="Enter your email again"></span>
+                    <span><input type="search" id="confirm_email" autocomplete="off" onkeyup="validate_confirm_email()" placeholder="Enter your email again"></span>
                     <div class="error" name="error" id="confirm_email_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>Type your password</p>
-                    <span><input type="password" name="password" id="password" placeholder="qwerty"></span>
+                    <span><input type="password" name="password" id="password" onkeyup="validate_password()" placeholder="qwerty"></span>
                     <div class="error" name="error" id="pass_error"></div>
                 </div> <br><br>
 
                 <div class="center">
                     <p>What do you want to be called?</p>
-                    <span><input type="text" name="username" id="username" placeholder="SpookyDoobydooo"></span>
+                    <span><input type="text" name="username" id="username" onkeyup="validate_username()" placeholder="SpookyDoobydooo"></span>
                     <div class="error" name="error" id="username_error"></div>
                 </div> <br><br>
 
@@ -108,7 +108,7 @@
 
                 <div class="center">
                     <p>Enter your date of birth</p>
-                    <input type="date" name="DOB" id="DOB">
+                    <input type="date" name="DOB" id="DOB" onclick="validate_dob()">
                     <div class="error" id="dob_error"></div>
                 </div> <br><br>
                 
@@ -135,7 +135,7 @@
                     return "error";
                 }
                 else {
-                    window.location.href = "./music/general/music.html"
+                    window.location.href = "WT-Project/music/general/music.html"
                 }
             }
 
