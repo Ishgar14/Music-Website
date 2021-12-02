@@ -21,6 +21,18 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+body {
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -5px;
+}
+
+.full-content {
+    display: flex; 
+    justify-content: stretch; 
+    height: 5.3in;
+}
+
 .central-text {
     color: var(--accent-color); 
     background-color: var(--accent-background-color);
