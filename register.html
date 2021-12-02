@@ -10,10 +10,14 @@
             }
 
             body {
-                background-image: repeating-linear-gradient(-45deg, 
+                background-image: url('Images/w3.png');
+                background-attachment: fixed;
+                
+                background-size: cover;
+                /*background-image: repeating-linear-gradient(-45deg, 
                     rgb(78, 245, 209) 10%,
                     rgba(240, 74, 185, 0.521) 25%
-                );
+                );*/
             }
 
             .center {
@@ -36,7 +40,7 @@
 
             input {
                 outline: 5px;
-                border: 3px solid black;
+                border: 3px solid rgb(255, 255, 255);
                 border-radius: .3em;
                 font-size: medium;
             }
@@ -44,9 +48,12 @@
             .submit-btn {
                 border-radius: 1in;
                 font-size: 2em;
-                color: rgb(245, 109, 109);
-                background-color: rgb(232, 245, 55);
+                color: rgb(0, 0, 0);
+                background-color: rgb(209, 202, 101);
                 width: 20%;
+            }
+            p{
+                color: aliceblue;
             }
         </style>
     </head>
@@ -99,9 +106,9 @@
                 <div class="center">
                     <p>What is your gender?</p>
                     <span class="center">
-                        <input type="radio" name="gender" value="male"> <label for="gender">Male </label>
-                        <input type="radio" name="gender" value="female"> <label for="gender">Female </label>
-                        <input type="radio" name="gender" value="nonbinary"> <label for="gender">Non Binary </label>
+                        <input type="radio" name="gender" value="male"> <label style="color: honeydew;" for="gender">Male </label>
+                        <input type="radio" name="gender" value="female"> <label style="color: honeydew;" for="gender">Female </label>
+                        <input type="radio" name="gender" value="nonbinary"> <label style="color: honeydew;" for="gender">Non Binary </label>
                     </span>
                     <div class="error" name="error" id="gender_error"></div>
                 </div> <br><br>
