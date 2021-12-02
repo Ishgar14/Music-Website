@@ -58,29 +58,29 @@
   <span class="login-card">
     <span style="background-color: var(--accent-background-color); width: 100%; display: flex; justify-content: center; align-items: center;">
       <span>
-        <br><br>
-        <label>Email</label> <br>
-        <input type="text" placeholder="rushikesh@gmail.com" name="email" id="email">
-        <span id="email_error" style="color: rgb(255, 178, 149); font-size: medium;"></span>
-        <br><br>
-        
-        <!-- <center>OR <br></center>
-
-        <label>Username</label> <br>
-        <input type="text" placeholder="Ishgar14"> <br>
-        
-        <hr> -->
-        
-        <label>Password</label> <br>
-        <input type="password" placeholder="qwerty" name="password" id="password">
-        <span id="password_error" style="color: rgb(255, 178, 149); font-size: medium;"></span>
-        <br><br>
-        <!-- <a style="text-decoration: underline; font-size: medium;">Forgot Password?</a> <br> -->
-        <span style="font-size: medium;">Don't have an account?</span>
-        <a href="./register.html" style="font-size: medium;">Sign up!</a> <br>
-
-        <input type="checkbox"> Remember me? <br><br>
-        <button class="login-btn" onclick="redirect_to_genres()">Login</button>
+        <form action="./login.php" method="GET">
+          <br><br>
+          <label>Email</label> <br>
+          <input type="text" placeholder="rushikesh@gmail.com" name="email" id="email">
+          <span id="email_error" style="color: rgb(255, 178, 149); font-size: medium;"></span>
+          <br><br>
+          
+          <!-- <center>OR <br></center>
+          <label>Username</label> <br>
+          <input type="text" placeholder="Ishgar14"> <br>
+          
+          <hr> -->
+          
+          <label>Password</label> <br>
+          <input type="password" placeholder="qwerty" name="password" id="password">
+          <span id="password_error" style="color: rgb(255, 178, 149); font-size: medium;"></span>
+          <br><br>
+          <!-- <a style="text-decoration: underline; font-size: medium;">Forgot Password?</a> <br> -->
+          <span style="font-size: medium;">Don't have an account?</span>
+          <a href="./register.html" style="font-size: medium;">Sign up!</a> <br>
+          <input type="checkbox"> Remember me? <br><br>
+          <button class="login-btn" onclick="redirect_to_genres()">Login</button>
+        </form>
       </span> <br> <br>
     </span>
   </span>
@@ -103,7 +103,8 @@
         password_error.innerText = "";
 
       if(!(email_error.innerText || password_error.innerText))
-        window.location.href = './genre.html';
+        // window.location.href = './genre.html';
+        window.location.href = `./login.php?email=${email.value}&password=${password.value}`;
     }
   </script>
 </body>
