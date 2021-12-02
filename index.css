@@ -65,3 +65,7 @@ footer, footer table {
     color: aliceblue;
     background-color: rgb(107, 102, 102);
 }
+
+table tr td{
+    padding-right: 1in;
+}
