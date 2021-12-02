@@ -11,19 +11,24 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $username = $_POST['username'];
         $DOB = $_POST['DOB'];
     }
 
-    $query = 'INSERT INTO users (firstname, lastname, email, password, username, DOB) values(null, null, ' . 
+    $query = 'INSERT INTO users (firstname, lastname, email, password, username, DOB) values(' .
+        "'" . $firstname . "'," .
+        "'" . $lastname . "'," .
         '"'. $email . '",' .
         '"'. $password . '",' .
         '"'. $username . '",' .
         '"'. $DOB . '"' .
         ')';
 
+    echo "<br>" . $query . "<br>";
     $result = mysqli_query($con, $query);
 
     if(!$result) {
